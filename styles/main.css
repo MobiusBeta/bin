@@ -126,6 +126,7 @@ body {
 	outline: none;
 	resize: none;
 	font-family: "Microsoft Yahei Light","Microsoft Yahei",Helvetica,sans-serif,"等线";
+	font-size: 0.88em;
 }
 #btnSend {
 	bottom: -60px;
