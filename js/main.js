@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w27c";
+var version="19w27c1";
 console.info("Version "+version);
 
 window.onload=function(){
