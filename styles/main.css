@@ -33,6 +33,18 @@ body {
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+#topBar.dark,#splashScr.dark,.btnRound.dark {
+	background-color: #333 !important;
+}
+body.dark,#areaEdit.dark,#textEdit.dark {
+	background-color: #444 !important;
+}
+#emptyPlaceholder.dark {
+	color: rgba(255,255,255,0.3) !important;
+}
+#textEdit.dark {
+	color: rgba(255,255,255,0.8) !important;
+}
 #splashScr {
 	position: fixed;
 	width: 100%;
@@ -99,7 +111,7 @@ body {
 	transform: rotate(90deg);
 }
 #btnNew:active,#btnSend:active {
-	background-color: #8764b8;
+	background-color: #8764b8 !important;
 	box-shadow: rgba(0,0,0,0.3) 0px 3px 10px;
 	transform: scale(0.9);
 }
