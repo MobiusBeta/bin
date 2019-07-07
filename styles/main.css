@@ -19,12 +19,12 @@ body {
 }
 @font-face {
   font-family: 'iconfont';  /* project id 1281248 */
-  src: url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.eot');
-  src: url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.woff2') format('woff2'),
-  url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_1281248_1pr1ktehffk.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.eot');
+  src: url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.svg#iconfont') format('svg');
 }
 .iconfont {
     font-family:"iconfont" !important;
@@ -47,6 +47,16 @@ body {
 	background-position: center;
 	background-image:url("../images/bin_Logo.png");
 }
+#btnBack {
+	display: none;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
 #emptyPlaceholder {
 	position: fixed;
 	top: 50%;
@@ -55,10 +65,8 @@ body {
 	text-align: center;
 	color: rgba(0,0,0,0.3);
 }
-#btnNew {
+.btnRound {
 	position: fixed;
-	bottom: 50px;
-	right: 30px;
 	width: 50px;
 	height: 50px;
 	background-color: white;
@@ -68,21 +76,25 @@ body {
 	transition: all 0.25s;
 	z-index: 999;
 }
-#btnNew:hover {
+#btnNew {
+	bottom: 50px;
+	right: 30px;
+}
+#btnNew:hover,#btnSend:hover {
 	transform: scale(1.1);
 }
 #btnNew:hover > .iconNew {
 	transform: rotate(90deg);
 }
-#btnNew:active {
+#btnNew:active,#btnSend:active {
 	background-color: #8764b8;
 	box-shadow: rgba(0,0,0,0.3) 0px 3px 10px;
 	transform: scale(0.9);
 }
-#btnNew:active > .iconNew {
+#btnNew:active > .iconNew,#btnSend:active > .iconSend {
 	color: white;
 }
-.iconNew {
+.iconNew,.iconSend,.iconBack {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -90,6 +102,39 @@ body {
 	margin-left: -8px;
 	color: #8764b8;
 	transition: all 0.25s;
+}
+#areaEdit {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 50px);
+	background-color: white;
+	transition: all 0.25s;
+}
+#textEdit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 40px);
+	height: calc(100% - 30px);
+	padding: 20px;
+	padding-top: 10px;
+	border: none;
+	outline: none;
+	resize: none;
+	font-family: "Microsoft Yahei Light","Microsoft Yahei",Helvetica,sans-serif,"等线";
+	font-size: small;
+}
+#btnSend {
+	bottom: -60px;
+	right: 30px;
+}
+#btnSend:hover > .iconSend {
+	transform: rotate(-45deg);
+	margin-left: -6.5px;
 }
 
 @media screen and (max-width:600px){  
