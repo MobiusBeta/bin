@@ -1,7 +1,10 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w27a3";
+var version="19w27a4";
 console.info("Version "+version);
 
+window.onload=function(){
+	splashScr.style.display="none";
+}
 function show(ele){
 	ele.style.display="block";
 	setTimeout(function(){
