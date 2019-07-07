@@ -1,9 +1,9 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w27a5";
+var version="19w27b";
 console.info("Version "+version);
 
 window.onload=function(){
-	splashScr.style.display="none";
+	hide(splashScr);
 }
 function show(ele){
 	ele.style.display="block";
