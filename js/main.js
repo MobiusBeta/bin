@@ -1,7 +1,8 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28a";
+var version="19w28a1";
 console.info("Version "+version);
-var backend="https://maorx.cn/bin/main.php";
+var backend="https://bin.maorx.cn/backend/main.php";
+//var backend="https://maorx.cn/bin/main.php";
 
 window.onload=function(){
 	hide(splashScr);
