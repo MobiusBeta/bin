@@ -1,6 +1,7 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w27c2";
+var version="19w28a";
 console.info("Version "+version);
+var backend="https://maorx.cn/bin/main.php";
 
 window.onload=function(){
 	hide(splashScr);
@@ -33,4 +34,16 @@ function goBack(){
 	setTimeout(function(){
 		btnNew.style.bottom="50px";
 	},250);
+}
+function post(){
+	postContent=textEdit.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", backend);
+	xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
+	xhr.send("action=post&postContent="+postContent);
+	xhr.onreadystatechange = function(){ 
+		if (xhr.readyState==4 && xhr.status==200){ 
+			goBack();
+		}
+	}
 }
