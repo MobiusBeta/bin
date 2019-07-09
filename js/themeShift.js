@@ -13,6 +13,8 @@ function themeShift(){
 			emptyPlaceholder.classList.add("dark");
 			areaEdit.classList.add("dark");
 			textEdit.classList.add("dark");
+			postLoading.classList.add("dark");
+			loadingTip.classList.add("dark");
 		}
 	}
 }

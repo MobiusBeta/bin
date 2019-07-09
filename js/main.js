@@ -2,6 +2,7 @@
 var version="19w28a3";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
+var postBtnEnabled=true;
 
 window.onload=function(){
 	hide(splashScr);
@@ -36,14 +37,46 @@ function goBack(){
 	},250);
 }
 function post(){
-	postContent=textEdit.value;
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", backend);
-	xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
-	xhr.send("action=post&postContent="+postContent);
-	xhr.onreadystatechange = function(){ 
-		if (xhr.readyState==4 && xhr.status==200){ 
-			goBack();
+	if(postBtnEnabled){
+		postBtnEnabled=false;
+		iconSend.style.top="-20px";
+		iconSend.style.left="70px";
+		setTimeout(function(){
+			iconSend.style.transition="none";
+			iconSend.style.top="70px";
+			iconSend.style.left="-20px";
+		},500);
+		setTimeout(function(){
+			iconSend.style.transition="transform 0.25s, color 0.25s, top 0.5s, left 0.5s";
+			iconSend.style.top="50%";
+			iconSend.style.left="50%";
+		},550);
+		setTimeout(function(){
+			if(loadingTip.innerText==="posting..."){
+				btnSend.style.bottom="-60px";
+			}
+			postBtnEnabled=true;
+		},1250);
+		loadingTip.innerText="posting...";
+		show(postLoading);
+
+		postContent=textEdit.value;
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", backend);
+		xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
+		xhr.send("action=post&postContent="+postContent);
+		xhr.onreadystatechange = function(){ 
+			if (xhr.readyState==4 && xhr.status==200){
+				hide(postLoading);
+				textEdit.value="";
+				goBack();
+			}else{
+				loadingTip.innerText="error :(";
+				setTimeout(function(){
+					hide(postLoading);
+				},2000);
+				btnSend.style.bottom="50px";
+			}
 		}
 	}
 }

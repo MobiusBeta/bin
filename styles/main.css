@@ -33,13 +33,13 @@ body {
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-#topBar.dark,#splashScr.dark,.btnRound.dark {
+#topBar.dark,#splashScr.dark,.btnRound.dark,#postLoading.dark {
 	background-color: #333 !important;
 }
 body.dark,#areaEdit.dark,#textEdit.dark {
 	background-color: #444 !important;
 }
-#emptyPlaceholder.dark {
+#emptyPlaceholder.dark,#loadingTip.dark {
 	color: rgba(255,255,255,0.3) !important;
 }
 #textEdit.dark {
@@ -99,6 +99,7 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	cursor: pointer;
 	transition: all 0.25s;
 	z-index: 999;
+	overflow: hidden;
 }
 #btnNew {
 	bottom: 50px;
@@ -126,6 +127,9 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	margin-left: -8px;
 	color: #8764b8;
 	transition: all 0.25s;
+}
+#iconSend {
+	transition: transform 0.25s, color 0.25s, top 0.5s, left 0.5s;
 }
 #areaEdit {
 	display: none;
@@ -159,6 +163,31 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 #btnSend:hover > .iconSend {
 	transform: rotate(-45deg);
 	margin-left: -6.5px;
+}
+#postLoading {
+	display: none;
+	opacity: 0;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 160px;
+	height: 80px;
+	margin-top: -40px;
+	margin-left: -80px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: rgba(0,0,0,0.1) 0px 5px 20px;
+	transition: all 0.25s;
+	text-align: center;
+}
+#loadingTip {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	margin-top: -8.5px;
+	color: rgb(0,0,0,0.5);
+	font-size: small;
 }
 
 @media screen and (max-width:600px){  
