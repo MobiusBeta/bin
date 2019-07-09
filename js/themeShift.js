@@ -5,17 +5,29 @@ var time=new Date().getHours();
 function themeShift(){
 	if(themeShiftEnabled){
 		if(time>21 || time<7){
-			document.body.classList.add("dark");
-			splashScr.classList.add("dark");
-			topBar.classList.add("dark");
-			btnNew.classList.add("dark");
-			btnSend.classList.add("dark");
-			emptyPlaceholder.classList.add("dark");
-			areaEdit.classList.add("dark");
-			textEdit.classList.add("dark");
-			postLoading.classList.add("dark");
-			loadingTip.classList.add("dark");
+			shift(document.body);
+			shift(splashScr);
+			shift(topBar);
+			shift(btnNew);
+			shift(btnSend);
+			shift(emptyPlaceholder);
+			shift(areaEdit);
+			shift(textEdit);
+			shift(postLoading);
+			shift(loadingTip);
+			classShift("postItem");
+			classShift("postContent");
+			classShift("postTime");
 		}
+	}
+}
+function shift(targetId){
+	targetId.classList.add("dark");
+}
+function classShift(targetClass){
+	targetClass1=document.getElementsByClassName(targetClass);
+	for(i=0; i<targetClass1.length; i++){ 
+		targetClass1[i].classList.add("dark");
 	}
 }
 
