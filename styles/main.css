@@ -106,6 +106,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	width: 100%;
 	height: calc(100% - 60px);
 	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
 .postItem {
 	position: relative;
