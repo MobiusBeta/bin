@@ -96,6 +96,7 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	padding-top: 10px;
 	width: 100%;
 	height: calc(100% - 60px);
+	overflow-y: scroll;
 }
 .postItem {
 	position: relative;
