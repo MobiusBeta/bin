@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28d1";
+var version="19w28d2";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -84,7 +84,7 @@ function post(){
 }
 function getPost(){
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", backend);
+	xhr.open("GET", backend);
 	xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
 	xhr.send("action=getPosts");
 	xhr.onreadystatechange = function(){ 
