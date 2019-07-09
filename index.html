@@ -17,7 +17,7 @@
     </head>
     
     <body>
-        <div id="splashScr"></div>
+        <div id="splashScr"><span id="splashInfo">&copy; Mao Ruoxin</span></div>
     	<div id="topBar"><span id="btnBack" onclick="goBack()"><i class="iconfont iconBack">&#xeb99;</i></span></div>
     	<div id="emptyPlaceholder">No trash here.</div>
         <div id="postList">
@@ -30,6 +30,6 @@
         <div id="areaEdit"><textarea id="textEdit" placeholder="express yourself."></textarea></div>
         <div class="btnRound" id="btnSend" onclick="post()"><i class="iconfont iconSend" id="iconSend">&#xeb9d;</i></div>
         <div id="postLoading"><span id="loadingTip">posting...</span></div>
-        <script>themeShift();getPosts();</script>
+        <script>themeShift();addSplashInfo();getPosts();</script>
     </body>
 </html>

@@ -33,16 +33,16 @@ body {
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-#topBar.dark,#splashScr.dark,.btnRound.dark,#postLoading.dark,.postItem.dark {
+#topBar.dark, #splashScr.dark, .btnRound.dark, #postLoading.dark, .postItem.dark {
 	background-color: #333 !important;
 }
-body.dark,#areaEdit.dark,#textEdit.dark {
+body.dark, #areaEdit.dark, #textEdit.dark {
 	background-color: #444 !important;
 }
-#emptyPlaceholder.dark,#loadingTip.dark,.postTime.dark {
+#splashInfo.dark, #emptyPlaceholder.dark, #loadingTip.dark, .postTime.dark {
 	color: rgba(255,255,255,0.3) !important;
 }
-#textEdit.dark,.postContent.dark {
+#textEdit.dark, .postContent.dark {
 	color: rgba(255,255,255,0.8) !important;
 }
 #splashScr {
@@ -56,6 +56,15 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	background-size: 150px auto;
 	background-position: center;
 	background-image:url("../images/bin_Logo.png");
+}
+#splashInfo {
+	position: absolute;
+	bottom: 30px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	color: rgba(0,0,0,0.3);
 }
 #topBar {
 	position: fixed;
@@ -138,21 +147,21 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	bottom: 50px;
 	right: 30px;
 }
-#btnNew:hover,#btnSend:hover {
+#btnNew:hover, #btnSend:hover {
 	transform: scale(1.1);
 }
 #btnNew:hover > .iconNew {
 	transform: rotate(90deg);
 }
-#btnNew:active,#btnSend:active {
+#btnNew:active, #btnSend:active {
 	background-color: #8764b8 !important;
 	box-shadow: rgba(0,0,0,0.3) 0px 3px 10px;
 	transform: scale(0.9);
 }
-#btnNew:active > .iconNew,#btnSend:active > .iconSend {
+#btnNew:active > .iconNew, #btnSend:active > .iconSend {
 	color: white;
 }
-.iconNew,.iconSend,.iconBack {
+.iconNew, .iconSend, .iconBack {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -223,8 +232,8 @@ body.dark,#areaEdit.dark,#textEdit.dark {
 	font-size: small;
 }
 
-@media screen and (max-width:600px){  
-   
+@media screen and (min-width:900px){  
+   .postItem {max-width: 460px; left: 50%; margin-left: -250px;}
 }
 
 

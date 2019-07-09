@@ -1,11 +1,14 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28e3";
+var version="19w28f";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
 
 window.onload=function(){
 	//hide(splashScr);
+}
+function addSplashInfo(){
+	splashInfo.innerHTML="&copy; Mao Ruoxin | "+version;
 }
 function show(ele){
 	ele.style.display="block";

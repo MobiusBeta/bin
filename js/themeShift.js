@@ -7,6 +7,7 @@ function themeShift(){
 		if(time>21 || time<7){
 			shift(document.body);
 			shift(splashScr);
+			shift(splashInfo);
 			shift(topBar);
 			shift(btnNew);
 			shift(btnSend);
