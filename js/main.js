@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28e1";
+var version="19w28e2";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -36,6 +36,10 @@ function goBack(){
 		btnNew.style.bottom="50px";
 	},250);
 }
+function loading(tipText){
+	loadingTip.innerText=tipText;
+	show(postLoading);
+}
 function post(){
 	if(postBtnEnabled){
 		postBtnEnabled=false;
@@ -57,8 +61,7 @@ function post(){
 			}
 			postBtnEnabled=true;
 		},1250);
-		loadingTip.innerText="posting...";
-		show(postLoading);
+		loading("posting...");
 
 		postContent=textEdit.value;
 		var xhr = new XMLHttpRequest();
@@ -72,6 +75,7 @@ function post(){
 					textEdit.value="";
 					goBack();
 					getPosts();
+					loading("refreshing...");
 				}else{
 					loadingTip.innerText="error :(";
 					btnSend.style.bottom="50px";
@@ -93,10 +97,12 @@ function getPosts(){
 			if(xhr.status==200){
 				console.log(xhr.responseText);
 				postList.innerHTML=xhr.responseText;
-				hide(splashScr);
+				hide(emptyPlaceholder);
 			}else{
-				hide(splashScr);
+				//hide(splashScr);
 			}
+			hide(splashScr);
+			hide(postLoading);
 		}
 	}
 }
