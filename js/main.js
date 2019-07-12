@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28g";
+var version="19w28g1";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -81,6 +81,7 @@ function post(){
 					setTimeout(function(){
 						loading("refreshing...");
 					},300);
+					console.log(xhr.responseText);
 				}else{
 					loadingTip.innerText="error :(";
 					btnSend.style.bottom="50px";
