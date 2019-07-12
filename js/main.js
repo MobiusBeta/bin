@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28g2";
+var version="19w28g3";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -103,7 +103,9 @@ function getPosts(){
 			if(xhr.status==200){
 				postList.innerHTML=xhr.responseText;
 				themeShift();
-				hide(emptyPlaceholder);
+				if(xhr.responseText!=""){
+					hide(emptyPlaceholder);
+				}
 				//console.log(xhr.responseText);
 			}else{
 				//hide(splashScr);
