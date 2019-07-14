@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28h";
+var version="19w28i";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -110,6 +110,7 @@ function getPosts(){
 				if(xhr.responseText!=""){
 					hide(emptyPlaceholder);
 				}
+				showPostsAnimation();
 				//console.log(xhr.responseText);
 			}else{
 				//hide(splashScr);
@@ -117,5 +118,13 @@ function getPosts(){
 			hide(splashScr);
 			hide(postLoading);
 		}
+	}
+}
+function showPostsAnimation(){
+	postNum=document.getElementsByClassName("postItem").length;
+	for(i=0; i<postNum; i++){ 
+		setTimeout(function(){
+			postItem[i].style.opacity="1";
+		},50);
 	}
 }
