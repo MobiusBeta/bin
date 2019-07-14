@@ -125,6 +125,6 @@ function showPostsAnimation(){
 	for(let i=0; i<postItem.length; i++){ 
 		setTimeout(function(){
 			postItem[i].style.opacity="1";
-		},500);
+		},100*i);
 	}
 }
