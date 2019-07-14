@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28g3";
+var version="19w28h";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -44,53 +44,57 @@ function loading(tipText){
 	show(postLoading);
 }
 function post(){
-	if(postBtnEnabled){
-		postBtnEnabled=false;
-		iconSend.style.top="-20px";
-		iconSend.style.left="70px";
-		setTimeout(function(){
-			iconSend.style.transition="none";
-			iconSend.style.top="70px";
-			iconSend.style.left="-20px";
-		},500);
-		setTimeout(function(){
-			iconSend.style.transition="transform 0.25s, color 0.25s, top 0.5s, left 0.5s";
-			iconSend.style.top="50%";
-			iconSend.style.left="50%";
-		},550);
-		setTimeout(function(){
-			if(loadingTip.innerText==="posting..."){
-				btnSend.style.bottom="-60px";
-			}
-			postBtnEnabled=true;
-		},1250);
-		loading("posting...");
+	if(textEdit.value!=""){
+		if(postBtnEnabled){
+			postBtnEnabled=false;
+			iconSend.style.top="-20px";
+			iconSend.style.left="70px";
+			setTimeout(function(){
+				iconSend.style.transition="none";
+				iconSend.style.top="70px";
+				iconSend.style.left="-20px";
+			},500);
+			setTimeout(function(){
+				iconSend.style.transition="transform 0.25s, color 0.25s, top 0.5s, left 0.5s";
+				iconSend.style.top="50%";
+				iconSend.style.left="50%";
+			},550);
+			setTimeout(function(){
+				if(loadingTip.innerText==="posting..."){
+					btnSend.style.bottom="-60px";
+				}
+				postBtnEnabled=true;
+			},1250);
+			loading("posting...");
 
-		postContent=textEdit.value;
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", backend);
-		xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
-		xhr.send("action=post&postContent="+postContent);
-		xhr.onreadystatechange = function(){ 
-			if(xhr.readyState==4){
-				if(xhr.status==200){
-					hide(postLoading);
-					textEdit.value="";
-					goBack();
-					getPosts();
-					setTimeout(function(){
-						loading("refreshing...");
-					},300);
-					//console.log(xhr.responseText);
-				}else{
-					loadingTip.innerText="error :(";
-					btnSend.style.bottom="50px";
-					setTimeout(function(){
+			postContent=textEdit.value;
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", backend);
+			xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
+			xhr.send("action=post&postContent="+postContent);
+			xhr.onreadystatechange = function(){ 
+				if(xhr.readyState==4){
+					if(xhr.status==200){
 						hide(postLoading);
-					},2000);
+						textEdit.value="";
+						goBack();
+						getPosts();
+						setTimeout(function(){
+							loading("refreshing...");
+						},300);
+						//console.log(xhr.responseText);
+					}else{
+						loadingTip.innerText="error :(";
+						btnSend.style.bottom="50px";
+						setTimeout(function(){
+							hide(postLoading);
+						},2000);
+					}
 				}
 			}
 		}
+	}else{
+		alert("此时无声胜有声？");
 	}
 }
 function getPosts(){
