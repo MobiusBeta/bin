@@ -79,7 +79,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	background-size: auto 90%;
 	background-position: center;
 	background-image:url("../images/bin_Logo.png");
-	backdrop-filter: blur(20px);
+	/*backdrop-filter: blur(20px);*/
 }
 #btnBack {
 	display: none;
@@ -147,7 +147,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	transition: all 0.25s;
 	z-index: 999;
 	overflow: hidden;
-	backdrop-filter: blur(20px);
+	/*backdrop-filter: blur(20px);*/
 }
 #btnNew {
 	bottom: 50px;
@@ -227,7 +227,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	box-shadow: rgba(0,0,0,0.1) 0px 5px 20px;
 	transition: all 0.25s;
 	text-align: center;
-	backdrop-filter: blur(20px);
+	/*backdrop-filter: blur(20px);*/
 }
 #loadingTip {
 	position: absolute;
