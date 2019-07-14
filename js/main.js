@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28i3";
+var version="19w28i4";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -125,6 +125,6 @@ function showPostsAnimation(){
 	for(let i=0; i<postItem.length; i++){ 
 		setTimeout(function(){
 			postItem[i].style.opacity="1";
-		},50);
+		},500);
 	}
 }
