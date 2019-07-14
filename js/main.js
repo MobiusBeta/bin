@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28i2";
+var version="19w28i3";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
