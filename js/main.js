@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28i1";
+var version="19w28i2";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -122,9 +122,10 @@ function getPosts(){
 }
 function showPostsAnimation(){
 	postNum=document.getElementsByClassName("postItem").length;
+	postItem=document.getElementsByClassName("postItem");
 	for(i=0; i<postNum; i++){ 
 		setTimeout(function(){
-			document.getElementsByClassName("postItem")[i].style.opacity="1";
+			postItem[i].style.opacity="1";
 		},50);
 	}
 }
