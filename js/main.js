@@ -121,10 +121,10 @@ function getPosts(){
 	}
 }
 function showPostsAnimation(){
-	postItem1=document.getElementsByClassName("postItem");
-	for(i=0; i<postItem1.length; i++){ 
-		//setTimeout(function(){
-			postItem1[i].style.opacity="1";
-		//},50);
+	postItem=document.getElementsByClassName("postItem");
+	for(let i=0; i<postItem.length; i++){ 
+		setTimeout(function(){
+			postItem[i].style.opacity="1";
+		},50);
 	}
 }
