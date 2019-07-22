@@ -19,12 +19,12 @@ body {
 }
 @font-face {
   font-family: 'iconfont';  /* project id 1281248 */
-  src: url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.eot');
-  src: url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.eot?#iefix') format('embedded-opentype'),
-  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.woff2') format('woff2'),
-  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.woff') format('woff'),
-  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.ttf') format('truetype'),
-  url('https://at.alicdn.com/t/font_1281248_g38zupv85u6.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.eot');
+  src: url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_1281248_39s685qvp2e.svg#iconfont') format('svg');
 }
 .iconfont {
     font-family:"iconfont" !important;
@@ -153,21 +153,21 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	bottom: 50px;
 	right: 30px;
 }
-#btnNew:hover, #btnSend:hover {
+#btnNew:hover, #btnSend:hover, #btnPic:hover {
 	transform: scale(1.1);
 }
 #btnNew:hover > .iconNew {
 	transform: rotate(90deg);
 }
-#btnNew:active, #btnSend:active {
+#btnNew:active, #btnSend:active, #btnPic:active {
 	background-color: #8764b8 !important;
 	box-shadow: rgba(0,0,0,0.3) 0px 3px 10px;
 	transform: scale(0.9);
 }
-#btnNew:active > .iconNew, #btnSend:active > .iconSend {
+#btnNew:active > .iconNew, #btnSend:active > .iconSend, #btnPic:active > .iconPic {
 	color: white;
 }
-.iconNew, .iconSend, .iconBack {
+.iconNew, .iconSend, .iconBack, .iconPic {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -204,6 +204,10 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	font-family: "Microsoft Yahei Light","Microsoft Yahei",Helvetica,sans-serif,"等线";
 	font-size: 0.88em;
 }
+#btnPic {
+	bottom: -60px;
+	right: 100px;
+}
 #btnSend {
 	bottom: -60px;
 	right: 30px;
@@ -237,6 +241,9 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	margin-top: -8.5px;
 	color: rgb(0,0,0,0.5);
 	font-size: small;
+}
+#browsePic {
+	display: none;
 }
 
 @media screen and (min-width:900px){  

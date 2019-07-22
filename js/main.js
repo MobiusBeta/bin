@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w28j1";
+var version="19w30a";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -30,9 +30,15 @@ function newDraft(){
 	setTimeout(function(){
 		btnSend.style.bottom="50px";
 	},250);
+	setTimeout(function(){
+		btnPic.style.bottom="50px";
+	},350);
 }
 function goBack(){
 	btnSend.style.bottom="-60px";
+	setTimeout(function(){
+		btnPic.style.bottom="-60px";
+	},100);
 	hide(areaEdit);
 	hide(btnBack);
 	setTimeout(function(){
@@ -62,6 +68,9 @@ function post(){
 			setTimeout(function(){
 				if(loadingTip.innerText==="posting..."){
 					btnSend.style.bottom="-60px";
+					setTimeout(function(){
+						btnPic.style.bottom="-60px";
+					},100);
 				}
 				postBtnEnabled=true;
 			},1250);
@@ -86,6 +95,9 @@ function post(){
 					}else{
 						loadingTip.innerText="error :(";
 						btnSend.style.bottom="50px";
+						setTimeout(function(){
+							btnPic.style.bottom="50px";
+						},100);
 						setTimeout(function(){
 							hide(postLoading);
 						},2000);
@@ -131,4 +143,7 @@ function showPostsAnimation(){
 			postItem[i].style.transform="scale(1)";
 		},350+100*i);
 	}
+}
+function attachPic(){
+	browsePic.click();
 }
