@@ -9,13 +9,12 @@ function themeShift(){
 			shift(splashScr);
 			shift(splashInfo);
 			shift(topBar);
-			shift(btnNew);
-			shift(btnSend);
 			shift(emptyPlaceholder);
 			shift(areaEdit);
 			shift(textEdit);
 			shift(postLoading);
 			shift(loadingTip);
+			classShift("btnRound");
 			classShift("postItem");
 			classShift("postContent");
 			classShift("postTime");
