@@ -242,7 +242,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	color: rgb(0,0,0,0.5);
 	font-size: small;
 }
-#browsePic {
+#frmUplPic, #browsePic {
 	display: none;
 }
 
