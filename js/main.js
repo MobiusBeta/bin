@@ -155,7 +155,7 @@ function uploadPic(){
 
 	$.ajax({
 	    url: 'https://sm.ms/api/upload',
-	    type: 'POST',
+	    method: 'POST',
 	    success: function(data){
 	        console.log(data);
 	        $('#res').html(JSON.stringify(data.data.url));
