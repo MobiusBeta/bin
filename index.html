@@ -31,7 +31,8 @@
         <div class="btnRound" id="btnPic" onclick="attachPic()"><i class="iconfont iconPic" id="iconPic">&#xeb9a;</i></div>
         <div class="btnRound" id="btnSend" onclick="post()"><i class="iconfont iconSend" id="iconSend">&#xeb9d;</i></div>
         <div id="postLoading"><span id="loadingTip">posting...</span></div>
-        <form id="frmUplPic" action="https://maorx.cn/bin_backend/upload.php" method="post" enctype="multipart/form-data">
+        <!--<form id="frmUplPic" action="https://maorx.cn/bin_backend/upload.php" method="post" enctype="multipart/form-data">-->
+        <form id="frmUplPic" enctype="multipart/form-data">
         　　<input type="file" name="file" id="browsePic" onchange="uploadPic()">
         </form>
         <script>themeShift();addSplashInfo();getPosts();</script>

@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30b2";
+var version="19w30c";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -149,5 +149,27 @@ function attachPic(){
 	browsePic.click();
 }
 function uploadPic(){
-	frmUplPic.submit();
+	var f=browsePic.files[0];
+    var formData=new FormData();
+    formData.append('smfile',f);
+
+	$.ajax({
+	    url: 'https://sm.ms/api/upload',
+	    type: 'POST',
+	    success: function(data){
+	        console.log(data);
+	        $('#res').html(JSON.stringify(data.data.url));
+	        console.log(data);
+	    },
+	    error: function(data){
+	        console.log(data);
+	    },
+	    
+	    data:formData,
+	    cache: false,
+	    contentType: false,
+	    processData: false
+	});
+
+	//frmUplPic.submit();
 }
