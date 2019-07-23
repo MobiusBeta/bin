@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30c";
+var version="19w30d";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -153,7 +153,22 @@ function uploadPic(){
     var formData=new FormData();
     formData.append('smfile',f);
 
-	$.ajax({
+    fetch("https://sm.ms/api/upload",{
+	    "method":"POST",
+	    "body":formData
+	}).then(response=>{
+	    if(response.ok||response.status==200){
+	        return response.json()
+	    }else{
+	        //返回了错误的HTTP状态码
+	    }
+	}).then(data=>{
+	    console.log(data);
+	}).catch(error=>{
+	    console.log(data);
+	})
+
+	/*$.ajax({
 	    url: 'https://sm.ms/api/upload',
 	    method: 'POST',
 	    success: function(data){
@@ -169,7 +184,7 @@ function uploadPic(){
 	    cache: false,
 	    contentType: false,
 	    processData: false
-	});
+	});*/
 
 	//frmUplPic.submit();
 }
