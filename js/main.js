@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30d";
+var version="19w30d1";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -149,6 +149,7 @@ function attachPic(){
 	browsePic.click();
 }
 function uploadPic(){
+	loading("uploading...");
 	var f=browsePic.files[0];
     var formData=new FormData();
     formData.append('smfile',f);
@@ -164,8 +165,16 @@ function uploadPic(){
 	    }
 	}).then(data=>{
 	    console.log(data);
+	    btnPic.style.backgroundImage="url("+data.data.url+")";
+	    iconPic.style.opacity="0";
+	    hide(postLoading);
 	}).catch(error=>{
 	    console.log(data);
+	    loadingTip.innerText="error :(";
+	    setTimeout(function(){
+			hide(postLoading);
+		},2000);
+
 	})
 
 	/*$.ajax({

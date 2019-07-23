@@ -207,6 +207,9 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 #btnPic {
 	bottom: -60px;
 	right: 100px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 #btnSend {
 	bottom: -60px;
