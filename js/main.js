@@ -1,9 +1,10 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30e1";
+var version="19w30e2";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
 var postPicUrl="";
+var postPicDelUrl="";
 
 window.onload=function(){
 	//hide(splashScr);
@@ -81,13 +82,14 @@ function post(){
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", backend);
 			xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
-			xhr.send("action=post&postContent="+postContent+"&postPicUrl="+postPicUrl);
+			xhr.send("action=post&postContent="+postContent+"&postPicUrl="+postPicUrl+"&postPicDelUrl="+postPicDelUrl);
 			xhr.onreadystatechange = function(){ 
 				if(xhr.readyState==4){
 					if(xhr.status==200){
 						hide(postLoading);
 						textEdit.value="";
 						postPicUrl="";
+						postPicDelUrl="";
 						goBack();
 						getPosts();
 						setTimeout(function(){
@@ -168,6 +170,7 @@ function uploadPic(){
 	}).then(data=>{
 	    console.log(data);
 	    postPicUrl=data.data.url;
+	    postPicDelUrl=data.data.delete;
 	    btnPic.style.backgroundImage="url("+data.data.url+")";
 	    iconPic.style.opacity="0";
 	    hide(postLoading);
