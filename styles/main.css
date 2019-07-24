@@ -4,7 +4,7 @@ body {
 	overflow-x: hidden;
 	margin: 0px;
 	font-family: "Microsoft Yahei Light","Microsoft Yahei",Helvetica,sans-serif,"等线";
-	background-color: white;
+	background-color: #f8f8f8;
 	-webkit-tap-highlight-color: transparent;
 	-moz-user-select: none; 
     -webkit-user-select: none;
@@ -129,6 +129,18 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	position: relative;
 	width: 100%;
 	font-size: 14px;
+}
+.postPicBox {
+	position: relative;
+	margin-top: 8px;
+	width: calc(100% + 40px);
+	left: -20px;
+	height: auto;
+	max-height: 100%;
+	background-color: rgba(0,0,0,0.1);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
 }
 .postTime {
 	position: relative;

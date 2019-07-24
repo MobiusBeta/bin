@@ -1,8 +1,9 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30d1";
+var version="19w30e";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
+var postPicUrl="";
 
 window.onload=function(){
 	//hide(splashScr);
@@ -80,12 +81,13 @@ function post(){
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", backend);
 			xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
-			xhr.send("action=post&postContent="+postContent);
+			xhr.send("action=post&postContent="+postContent+"&postPicUrl="+postPicUrl);
 			xhr.onreadystatechange = function(){ 
 				if(xhr.readyState==4){
 					if(xhr.status==200){
 						hide(postLoading);
 						textEdit.value="";
+						postPicUrl="";
 						goBack();
 						getPosts();
 						setTimeout(function(){
@@ -165,11 +167,12 @@ function uploadPic(){
 	    }
 	}).then(data=>{
 	    console.log(data);
+	    postPicUrl=data.data.url;
 	    btnPic.style.backgroundImage="url("+data.data.url+")";
 	    iconPic.style.opacity="0";
 	    hide(postLoading);
 	}).catch(error=>{
-	    console.log(data);
+	    console.log(error);
 	    loadingTip.innerText="error :(";
 	    setTimeout(function(){
 			hide(postLoading);
