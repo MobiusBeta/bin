@@ -138,6 +138,7 @@ body.dark, #areaEdit.dark, #textEdit.dark {
 	left: -20px;
 	height: auto;
 	max-height: 100%;
+	border: none;
 	background-color: rgba(0,0,0,0.1);
 	background-repeat: no-repeat;
 	background-size: contain;
