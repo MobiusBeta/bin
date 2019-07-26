@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30f3";
+var version="19w30g";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -90,6 +90,8 @@ function post(){
 						textEdit.value="";
 						postPicUrl="";
 						postPicDelUrl="";
+						btnPic.style.backgroundImage="";
+						iconPic.style.opacity="1";
 						goBack();
 						getPosts();
 						setTimeout(function(){
@@ -125,6 +127,13 @@ function getPosts(){
 				themeShift();
 				if(xhr.responseText!=""){
 					hide(emptyPlaceholder);
+				}
+				if(document.getElementsByClassName("toDel")){
+					toDelClass=document.getElementsByClassName("toDel");
+					for(i=0; i<toDelClass.length; i++){ 
+						toDelPicUrl=toDelClass[i].id;
+						fetch(toDelPicUrl);
+					}
 				}
 				showPostsAnimation();
 				//console.log(xhr.responseText);
