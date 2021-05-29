@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="21w22a1";
+var version="21w22a2";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -158,16 +158,16 @@ function showPostsAnimation(){
 	}
 }
 function attachPic(){
-	//alert("working on it");
-	if(iconPic.style.opacity==="0"){
-		fetch(postPicDelUrl);
-		postPicUrl="";
-		postPicDelUrl="";
-		btnPic.style.backgroundImage="";
-		iconPic.style.opacity="1";
-	}else{
-		browsePic.click();
-	}
+	alert("上传图片的功能坏掉了，我还没有修...");
+	// if(iconPic.style.opacity==="0"){
+	// 	fetch(postPicDelUrl);
+	// 	postPicUrl="";
+	// 	postPicDelUrl="";
+	// 	btnPic.style.backgroundImage="";
+	// 	iconPic.style.opacity="1";
+	// }else{
+	// 	browsePic.click();
+	// }
 }
 function uploadPic(){
 	loading("uploading...");
