@@ -1,5 +1,5 @@
 /* JavaScript written by MaoRX.cn */
-var version="19w30g";
+var version="21w22a";
 console.info("Version "+version);
 var backend="https://maorx.cn/bin_backend/main.php";
 var postBtnEnabled=true;
@@ -123,7 +123,7 @@ function getPosts(){
 	xhr.onreadystatechange = function(){ 
 		if(xhr.readyState==4){
 			if(xhr.status==200){
-				postList.innerHTML=xhr.responseText;
+				postList.innerHTML = xhr.responseText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 				themeShift();
 				if(xhr.responseText!=""){
 					hide(emptyPlaceholder);
