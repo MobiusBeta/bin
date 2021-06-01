@@ -1,10 +1,10 @@
 /* JavaScript written by MaoRX.cn */
-var version = "21w23a2";
+const version = "21w23a3";
 console.info("Version " + version);
-var backend = "https://maorx.cn/bin_backend/main.php";
-var postBtnEnabled = true;
-var postPicUrl = "";
-var postPicDelUrl = "";
+const backend = "https://maorx.cn/bin_backend/main.php";
+let postBtnEnabled = true;
+let postPicUrl = "";
+let postPicDelUrl = "";
 
 addSplashInfo();
 getPosts();
@@ -82,7 +82,7 @@ btnSend.onclick = function () {
 			loading("posting...");
 
 			postContent=textEdit.value;
-			var xhr = new XMLHttpRequest();
+			const xhr = new XMLHttpRequest();
 			xhr.open("POST", backend);
 			xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
 			xhr.send("action=post&postContent="+postContent+"&postPicUrl="+postPicUrl+"&postPicDelUrl="+postPicDelUrl);
@@ -119,7 +119,7 @@ btnSend.onclick = function () {
 	}
 }
 function getPosts(){
-	var xhr = new XMLHttpRequest();
+	const xhr = new XMLHttpRequest();
 	xhr.open("POST", backend);
 	xhr.setRequestHeader('Content-Type',' application/x-www-form-urlencoded');
 	xhr.send("action=getPosts");
@@ -172,9 +172,8 @@ btnPic.onclick = function () {
 }
 browsePic.onchange = function () {
 	loading("uploading...");
-	var f=browsePic.files[0];
-    var formData=new FormData();
-    formData.append('smfile',f);
+	let formData = new FormData();
+	formData.append('smfile', browsePic.files[0]);
 
     fetch("https://sm.ms/api/upload",{
 	    "method":"POST",
