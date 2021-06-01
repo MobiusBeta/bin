@@ -6,6 +6,7 @@
         <meta charset="utf-8">
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src https:; font-src data: https://at.alicdn.com; form-action 'none'; img-src 'self' data: https:; manifest-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'">
         <title>垃圾桶</title>
         <link rel="shortcut icon" href="./favicon.ico"/>
         <style type="text/css">
@@ -18,7 +19,7 @@
     
     <body>
         <div id="splashScr"><span id="splashInfo">&copy; Mao Ruoxin</span></div>
-    	<div id="topBar"><span id="btnBack" onclick="goBack()"><i class="iconfont iconBack">&#xeb99;</i></span></div>
+    	<div id="topBar"><span id="btnBack"><i class="iconfont iconBack">&#xeb99;</i></span></div>
     	<div id="emptyPlaceholder">No trash here.</div>
         <div id="postList">
             <!--<div class="postItem">
@@ -27,15 +28,14 @@
                 <div class="postTime">2019-7-8 00:52:01</div>
             </div>-->
         </div>
-    	<div class="btnRound" id="btnNew" onclick="newDraft()"><i class="iconfont iconNew">&#xeb8f;</i></div>
+    	<div class="btnRound" id="btnNew"><i class="iconfont iconNew">&#xeb8f;</i></div>
         <div id="areaEdit"><textarea id="textEdit" placeholder="express yourself."></textarea></div>
-        <div class="btnRound" id="btnPic" onclick="attachPic()"><i class="iconfont iconPic" id="iconPic">&#xeb9a;</i></div>
-        <div class="btnRound" id="btnSend" onclick="post()"><i class="iconfont iconSend" id="iconSend">&#xeb9d;</i></div>
+        <div class="btnRound" id="btnPic"><i class="iconfont iconPic" id="iconPic">&#xeb9a;</i></div>
+        <div class="btnRound" id="btnSend"><i class="iconfont iconSend" id="iconSend">&#xeb9d;</i></div>
         <div id="postLoading"><span id="loadingTip">posting...</span></div>
         <!--<form id="frmUplPic" action="https://maorx.cn/bin_backend/upload.php" method="post" enctype="multipart/form-data">-->
         <form id="frmUplPic" enctype="multipart/form-data">
-        　　<input type="file" name="file" id="browsePic" onchange="uploadPic()">
+        　　<input type="file" name="file" id="browsePic">
         </form>
-        <script>themeShift();addSplashInfo();getPosts();</script>
     </body>
 </html>

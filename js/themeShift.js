@@ -2,6 +2,8 @@
 var themeShiftEnabled=true;
 var time=new Date().getHours();
 
+themeShift();
+
 function themeShift(){
 	if(themeShiftEnabled){
 		if(time>21 || time<7){

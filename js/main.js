@@ -1,10 +1,13 @@
 /* JavaScript written by MaoRX.cn */
-var version="21w22a2";
-console.info("Version "+version);
-var backend="https://maorx.cn/bin_backend/main.php";
-var postBtnEnabled=true;
-var postPicUrl="";
-var postPicDelUrl="";
+var version = "21w23a";
+console.info("Version " + version);
+var backend = "https://maorx.cn/bin_backend/main.php";
+var postBtnEnabled = true;
+var postPicUrl = "";
+var postPicDelUrl = "";
+
+addSplashInfo();
+getPosts();
 
 window.onload=function(){
 	//hide(splashScr);
@@ -24,7 +27,7 @@ function hide(ele){
 		ele.style.display="none";
 	},250);
 }
-function newDraft(){
+btnNew.onclick = function () {
 	btnNew.style.bottom="-60px";
 	show(areaEdit);
 	show(btnBack);
@@ -36,7 +39,7 @@ function newDraft(){
 		btnPic.style.bottom="50px";
 	},350);
 }
-function goBack(){
+btnBack.onclick = function () {
 	btnSend.style.bottom="-60px";
 	setTimeout(function(){
 		btnPic.style.bottom="-60px";
@@ -51,7 +54,7 @@ function loading(tipText){
 	loadingTip.innerText=tipText;
 	show(postLoading);
 }
-function post(){
+btnSend.onclick = function () {
 	if(textEdit.value!=""){
 		if(postBtnEnabled){
 			postBtnEnabled=false;
@@ -92,7 +95,7 @@ function post(){
 						postPicDelUrl="";
 						btnPic.style.backgroundImage="";
 						iconPic.style.opacity="1";
-						goBack();
+						btnBack.onclick();
 						getPosts();
 						setTimeout(function(){
 							loading("refreshing...");
@@ -137,8 +140,6 @@ function getPosts(){
 				}
 				showPostsAnimation();
 				//console.log(xhr.responseText);
-			}else{
-				//hide(splashScr);
 			}
 			hide(splashScr);
 			hide(postLoading);
@@ -157,7 +158,7 @@ function showPostsAnimation(){
 		},350+100*i);
 	}
 }
-function attachPic(){
+btnPic.onclick = function () {
 	alert("上传图片的功能坏掉了，我还没有修...");
 	// if(iconPic.style.opacity==="0"){
 	// 	fetch(postPicDelUrl);
@@ -169,7 +170,7 @@ function attachPic(){
 	// 	browsePic.click();
 	// }
 }
-function uploadPic(){
+browsePic.onchange = function () {
 	loading("uploading...");
 	var f=browsePic.files[0];
     var formData=new FormData();
